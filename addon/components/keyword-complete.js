@@ -270,6 +270,9 @@ export default Ember.Component.extend({
     run.scheduleOnce('afterRender', this, () => {
       setCaretPosition(this.get('input'), start + selectionString.length);
     });
+    
+    // Send the onSelected action
+    this.sendAction('onSelected', selectedItem);
   },
 
   willDestroyElement: function () {
